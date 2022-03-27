@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0866F6ECEEC9C02BF5B48215 /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
+		8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */; };
 		D1F85F9427F0A6A4004A1B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9327F0A6A4004A1B0C /* AppDelegate.swift */; };
 		D1F85F9627F0A6A4004A1B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9527F0A6A4004A1B0C /* SceneDelegate.swift */; };
 		D1F85F9827F0A6A4004A1B0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9727F0A6A4004A1B0C /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 		D1F85FAE27F0A6A7004A1B0C /* ReceiptRecordV4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FAD27F0A6A7004A1B0C /* ReceiptRecordV4Tests.swift */; };
 		D1F85FB827F0A6A7004A1B0C /* ReceiptRecordV4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FB727F0A6A7004A1B0C /* ReceiptRecordV4UITests.swift */; };
 		D1F85FBA27F0A6A7004A1B0C /* ReceiptRecordV4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FB927F0A6A7004A1B0C /* ReceiptRecordV4UITestsLaunchTests.swift */; };
+		F42DA12A6DD53EDC37B9FD7E /* Pods_ReceiptRecordV4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2B8214F72D5090BDE3B2BB /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4-ReceiptRecordV4UITests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4-ReceiptRecordV4UITests/Pods-ReceiptRecordV4-ReceiptRecordV4UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		309863057F7D1B61BCA979A1 /* Pods-ReceiptRecordV4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.debug.xcconfig"; sourceTree = "<group>"; };
+		6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7194398D67C81EA959FA3C31 /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4-ReceiptRecordV4UITests.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4-ReceiptRecordV4UITests/Pods-ReceiptRecordV4-ReceiptRecordV4UITests.release.xcconfig"; sourceTree = "<group>"; };
+		87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.release.xcconfig"; sourceTree = "<group>"; };
+		88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F85F9027F0A6A4004A1B0C /* ReceiptRecordV4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceiptRecordV4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F85F9327F0A6A4004A1B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1F85F9527F0A6A4004A1B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		D1F85FB327F0A6A7004A1B0C /* ReceiptRecordV4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptRecordV4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F85FB727F0A6A7004A1B0C /* ReceiptRecordV4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRecordV4UITests.swift; sourceTree = "<group>"; };
 		D1F85FB927F0A6A7004A1B0C /* ReceiptRecordV4UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRecordV4UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6D1FA3E7C47D450EC998BE0 /* Pods-ReceiptRecordV4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0866F6ECEEC9C02BF5B48215 /* Pods_ReceiptRecordV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42DA12A6DD53EDC37B9FD7E /* Pods_ReceiptRecordV4Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3C77640AE4A11BF1F2E0BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */,
+				24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */,
+				AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D1F85F8727F0A6A4004A1B0C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				D1F85FAC27F0A6A7004A1B0C /* ReceiptRecordV4Tests */,
 				D1F85FB627F0A6A7004A1B0C /* ReceiptRecordV4UITests */,
 				D1F85F9127F0A6A4004A1B0C /* Products */,
+				F15623A05DBDEB57E2EE43E3 /* Pods */,
+				3C3C77640AE4A11BF1F2E0BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +157,20 @@
 			path = ReceiptRecordV4UITests;
 			sourceTree = "<group>";
 		};
+		F15623A05DBDEB57E2EE43E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				309863057F7D1B61BCA979A1 /* Pods-ReceiptRecordV4.debug.xcconfig */,
+				87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */,
+				0B2B8214F72D5090BDE3B2BB /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.debug.xcconfig */,
+				7194398D67C81EA959FA3C31 /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.release.xcconfig */,
+				88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */,
+				E6D1FA3E7C47D450EC998BE0 /* Pods-ReceiptRecordV4Tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1F85FBD27F0A6A7004A1B0C /* Build configuration list for PBXNativeTarget "ReceiptRecordV4" */;
 			buildPhases = (
+				1705C20427ABCFCCC0A2A235 /* [CP] Check Pods Manifest.lock */,
 				D1F85F8C27F0A6A4004A1B0C /* Sources */,
 				D1F85F8D27F0A6A4004A1B0C /* Frameworks */,
 				D1F85F8E27F0A6A4004A1B0C /* Resources */,
+				A16BAF6C39EC6FF585865BFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1F85FC027F0A6A7004A1B0C /* Build configuration list for PBXNativeTarget "ReceiptRecordV4Tests" */;
 			buildPhases = (
+				8356E0D493872B2BDA4A6BF2 /* [CP] Check Pods Manifest.lock */,
 				D1F85FA527F0A6A7004A1B0C /* Sources */,
 				D1F85FA627F0A6A7004A1B0C /* Frameworks */,
 				D1F85FA727F0A6A7004A1B0C /* Resources */,
@@ -172,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1F85FC327F0A6A7004A1B0C /* Build configuration list for PBXNativeTarget "ReceiptRecordV4UITests" */;
 			buildPhases = (
+				910D75704085A926BD73E1FF /* [CP] Check Pods Manifest.lock */,
 				D1F85FAF27F0A6A7004A1B0C /* Sources */,
 				D1F85FB027F0A6A7004A1B0C /* Frameworks */,
 				D1F85FB127F0A6A7004A1B0C /* Resources */,
+				EF1D7D8D3958A1C98211CD66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1705C20427ABCFCCC0A2A235 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReceiptRecordV4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8356E0D493872B2BDA4A6BF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReceiptRecordV4Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		910D75704085A926BD73E1FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReceiptRecordV4-ReceiptRecordV4UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A16BAF6C39EC6FF585865BFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF1D7D8D3958A1C98211CD66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4-ReceiptRecordV4UITests/Pods-ReceiptRecordV4-ReceiptRecordV4UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4-ReceiptRecordV4UITests/Pods-ReceiptRecordV4-ReceiptRecordV4UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReceiptRecordV4-ReceiptRecordV4UITests/Pods-ReceiptRecordV4-ReceiptRecordV4UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1F85F8C27F0A6A4004A1B0C /* Sources */ = {
@@ -436,6 +585,7 @@
 		};
 		D1F85FBE27F0A6A7004A1B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 309863057F7D1B61BCA979A1 /* Pods-ReceiptRecordV4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +614,7 @@
 		};
 		D1F85FBF27F0A6A7004A1B0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +643,7 @@
 		};
 		D1F85FC127F0A6A7004A1B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +664,7 @@
 		};
 		D1F85FC227F0A6A7004A1B0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6D1FA3E7C47D450EC998BE0 /* Pods-ReceiptRecordV4Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +685,7 @@
 		};
 		D1F85FC427F0A6A7004A1B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B2B8214F72D5090BDE3B2BB /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +704,7 @@
 		};
 		D1F85FC527F0A6A7004A1B0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7194398D67C81EA959FA3C31 /* Pods-ReceiptRecordV4-ReceiptRecordV4UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
