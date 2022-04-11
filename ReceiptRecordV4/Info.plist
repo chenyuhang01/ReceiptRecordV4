@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
+	<key>NotionAPI</key>
+	<dict>
+		<key>NotionAPIURL</key>
+		<string>https://api.notion.com</string>
+		<key>NotionAPIVersion</key>
+		<string>v1</string>
+		<key>NotionSecretKey</key>
+		<string>secret_uN4aZgDV7XuKOnZocZKSnLti2dSN5g8GHw8Y4sVMJ48</string>
+		<key>NotionVersion</key>
+		<string>2021-08-16</string>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Oswald-VariableFont_wght.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

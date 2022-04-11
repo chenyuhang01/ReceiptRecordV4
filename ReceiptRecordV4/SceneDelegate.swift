@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Vision
+import VisionKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +19,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            for vc in tabBarController.viewControllers! {
+                guard let navigationVC = vc as? UINavigationController else { continue }
+                for subVC in navigationVC.viewControllers {
+                    guard let menuVC = subVC as? MenuVC else { continue }
+                    menuVC.receiptManager = ReceiptRecordManager.shared
+                    menuVC.documentCameraViewController = VNDocumentCameraViewController()
+                    menuVC.addMainVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddMainVC") as! AddMainVC)
+                    menuVC.addMainVC.addSubVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddSubVC") as! AddSubVC)
+                    break
+                }
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

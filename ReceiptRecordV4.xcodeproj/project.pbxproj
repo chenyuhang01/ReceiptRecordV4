@@ -7,15 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0866F6ECEEC9C02BF5B48215 /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
 		8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */; };
+		D172F4672800645B002A72BE /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
+		D1986E192803DABC003298FD /* TableReceiptUnDoneViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */; };
+		D1986E1A2803DABC003298FD /* TableReceiptUnDoneViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */; };
+		D1AFD3DA27F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3D927F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf */; };
+		D1AFD3DD27F2D4F000045AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3DB27F2D4F000045AAB /* Main.storyboard */; };
+		D1AFD3DE27F2D4F000045AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3DC27F2D4F000045AAB /* LaunchScreen.storyboard */; };
+		D1AFD3E027F2EF1F00045AAB /* RoundedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AFD3DF27F2EF1F00045AAB /* RoundedTabBarController.swift */; };
+		D1AFD3E427F3017900045AAB /* TableReceiptViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AFD3E227F3017900045AAB /* TableReceiptViewCell.swift */; };
+		D1AFD3E527F3017900045AAB /* TableReceiptViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3E327F3017900045AAB /* TableReceiptViewCell.xib */; };
+		D1D2B76927F0AAC4005E7C8D /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9727F0A6A4004A1B0C /* MenuController.swift */; };
+		D1D2B77127F0AB66005E7C8D /* ReceiptRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B76F27F0AB66005E7C8D /* ReceiptRecordManager.swift */; };
+		D1D2B77227F0AB66005E7C8D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77027F0AB66005E7C8D /* FirebaseManager.swift */; };
+		D1D2B77D27F0AB8A005E7C8D /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77427F0AB8A005E7C8D /* Logging.swift */; };
+		D1D2B77E27F0AB8A005E7C8D /* NotionSecureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77527F0AB8A005E7C8D /* NotionSecureRequest.swift */; };
+		D1D2B77F27F0AB8A005E7C8D /* NotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77627F0AB8A005E7C8D /* NotionService.swift */; };
+		D1D2B78027F0AB8A005E7C8D /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77727F0AB8A005E7C8D /* FirebaseService.swift */; };
+		D1D2B78127F0AB8A005E7C8D /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77827F0AB8A005E7C8D /* Preference.swift */; };
+		D1D2B78227F0AB8A005E7C8D /* ReceiptRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77A27F0AB8A005E7C8D /* ReceiptRecord.swift */; };
+		D1D2B78327F0AB8A005E7C8D /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77B27F0AB8A005E7C8D /* Database.swift */; };
+		D1D2B78427F0AB8A005E7C8D /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B77C27F0AB8A005E7C8D /* Filter.swift */; };
+		D1D2B78D27F0ABD5005E7C8D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B78B27F0ABD5005E7C8D /* String.swift */; };
+		D1D2B78E27F0ABD5005E7C8D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B78C27F0ABD5005E7C8D /* UIImage.swift */; };
+		D1D2B79227F19CA8005E7C8D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1D2B79127F19CA8005E7C8D /* GoogleService-Info.plist */; };
+		D1D2B79527F19F3A005E7C8D /* DatabaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B79427F19F3A005E7C8D /* DatabaseVM.swift */; };
+		D1D2B79727F1B2D6005E7C8D /* ReceiptRecordVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D2B79627F1B2D6005E7C8D /* ReceiptRecordVM.swift */; };
+		D1DBE19227F3176D00A1BEAA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19127F3176D00A1BEAA /* UIView.swift */; };
+		D1DBE19427F48DB300A1BEAA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19327F48DB300A1BEAA /* UIColor.swift */; };
+		D1DBE19627F4975B00A1BEAA /* AddMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19527F4975B00A1BEAA /* AddMainController.swift */; };
+		D1DBE19827F49C5400A1BEAA /* AddSubController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19727F49C5400A1BEAA /* AddSubController.swift */; };
+		D1DBE19B27F4A91900A1BEAA /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19927F4A91900A1BEAA /* HeaderViewCell.swift */; };
+		D1DBE19C27F4A91900A1BEAA /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE19A27F4A91900A1BEAA /* HeaderViewCell.xib */; };
+		D1DBE19E27F86F2000A1BEAA /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE19D27F86F2000A1BEAA /* UILabel.swift */; };
+		D1DBE1A127F8784700A1BEAA /* ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE1A027F8784700A1BEAA /* ColorCode.swift */; };
 		D1F85F9427F0A6A4004A1B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9327F0A6A4004A1B0C /* AppDelegate.swift */; };
 		D1F85F9627F0A6A4004A1B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9527F0A6A4004A1B0C /* SceneDelegate.swift */; };
-		D1F85F9827F0A6A4004A1B0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9727F0A6A4004A1B0C /* ViewController.swift */; };
-		D1F85F9B27F0A6A4004A1B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F85F9927F0A6A4004A1B0C /* Main.storyboard */; };
-		D1F85F9E27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1F85F9C27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodeld */; };
 		D1F85FA027F0A6A7004A1B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F85F9F27F0A6A7004A1B0C /* Assets.xcassets */; };
-		D1F85FA327F0A6A7004A1B0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1F85FA127F0A6A7004A1B0C /* LaunchScreen.storyboard */; };
 		D1F85FAE27F0A6A7004A1B0C /* ReceiptRecordV4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FAD27F0A6A7004A1B0C /* ReceiptRecordV4Tests.swift */; };
 		D1F85FB827F0A6A7004A1B0C /* ReceiptRecordV4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FB727F0A6A7004A1B0C /* ReceiptRecordV4UITests.swift */; };
 		D1F85FBA27F0A6A7004A1B0C /* ReceiptRecordV4UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F85FB927F0A6A7004A1B0C /* ReceiptRecordV4UITestsLaunchTests.swift */; };
@@ -48,14 +76,42 @@
 		87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.release.xcconfig"; sourceTree = "<group>"; };
 		88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReceiptUnDoneViewCell.xib; sourceTree = "<group>"; };
+		D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableReceiptUnDoneViewCell.swift; sourceTree = "<group>"; };
+		D1AFD3D927F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		D1AFD3DB27F2D4F000045AAB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D1AFD3DC27F2D4F000045AAB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1AFD3DF27F2EF1F00045AAB /* RoundedTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTabBarController.swift; sourceTree = "<group>"; };
+		D1AFD3E227F3017900045AAB /* TableReceiptViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReceiptViewCell.swift; sourceTree = "<group>"; };
+		D1AFD3E327F3017900045AAB /* TableReceiptViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableReceiptViewCell.xib; sourceTree = "<group>"; };
+		D1D2B76F27F0AB66005E7C8D /* ReceiptRecordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptRecordManager.swift; sourceTree = "<group>"; };
+		D1D2B77027F0AB66005E7C8D /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		D1D2B77427F0AB8A005E7C8D /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		D1D2B77527F0AB8A005E7C8D /* NotionSecureRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotionSecureRequest.swift; sourceTree = "<group>"; };
+		D1D2B77627F0AB8A005E7C8D /* NotionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotionService.swift; sourceTree = "<group>"; };
+		D1D2B77727F0AB8A005E7C8D /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		D1D2B77827F0AB8A005E7C8D /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		D1D2B77A27F0AB8A005E7C8D /* ReceiptRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptRecord.swift; sourceTree = "<group>"; };
+		D1D2B77B27F0AB8A005E7C8D /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		D1D2B77C27F0AB8A005E7C8D /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		D1D2B78B27F0ABD5005E7C8D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D1D2B78C27F0ABD5005E7C8D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		D1D2B79127F19CA8005E7C8D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D1D2B79427F19F3A005E7C8D /* DatabaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseVM.swift; sourceTree = "<group>"; };
+		D1D2B79627F1B2D6005E7C8D /* ReceiptRecordVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRecordVM.swift; sourceTree = "<group>"; };
+		D1DBE19127F3176D00A1BEAA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D1DBE19327F48DB300A1BEAA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D1DBE19527F4975B00A1BEAA /* AddMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMainController.swift; sourceTree = "<group>"; };
+		D1DBE19727F49C5400A1BEAA /* AddSubController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubController.swift; sourceTree = "<group>"; };
+		D1DBE19927F4A91900A1BEAA /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		D1DBE19A27F4A91900A1BEAA /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		D1DBE19D27F86F2000A1BEAA /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		D1DBE1A027F8784700A1BEAA /* ColorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCode.swift; sourceTree = "<group>"; };
 		D1F85F9027F0A6A4004A1B0C /* ReceiptRecordV4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceiptRecordV4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F85F9327F0A6A4004A1B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1F85F9527F0A6A4004A1B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D1F85F9727F0A6A4004A1B0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D1F85F9A27F0A6A4004A1B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D1F85F9D27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReceiptRecordV4.xcdatamodel; sourceTree = "<group>"; };
+		D1F85F9727F0A6A4004A1B0C /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D1F85F9F27F0A6A7004A1B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1F85FA227F0A6A7004A1B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1F85FA427F0A6A7004A1B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1F85FA927F0A6A7004A1B0C /* ReceiptRecordV4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReceiptRecordV4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F85FAD27F0A6A7004A1B0C /* ReceiptRecordV4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRecordV4Tests.swift; sourceTree = "<group>"; };
@@ -70,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0866F6ECEEC9C02BF5B48215 /* Pods_ReceiptRecordV4.framework in Frameworks */,
+				D172F4672800645B002A72BE /* Pods_ReceiptRecordV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +159,99 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D1AFD3E127F3004B00045AAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */,
+				D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */,
+				D1AFD3E227F3017900045AAB /* TableReceiptViewCell.swift */,
+				D1AFD3E327F3017900045AAB /* TableReceiptViewCell.xib */,
+				D1DBE19927F4A91900A1BEAA /* HeaderViewCell.swift */,
+				D1DBE19A27F4A91900A1BEAA /* HeaderViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1BF75A627F1FCF1002E200E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1F85F9727F0A6A4004A1B0C /* MenuController.swift */,
+				D1AFD3DF27F2EF1F00045AAB /* RoundedTabBarController.swift */,
+				D1DBE19527F4975B00A1BEAA /* AddMainController.swift */,
+				D1DBE19727F49C5400A1BEAA /* AddSubController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1BF75A727F2C96E002E200E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D1AFD3D927F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D1D2B76E27F0AB66005E7C8D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2B76F27F0AB66005E7C8D /* ReceiptRecordManager.swift */,
+				D1D2B77027F0AB66005E7C8D /* FirebaseManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		D1D2B77327F0AB8A005E7C8D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2B77427F0AB8A005E7C8D /* Logging.swift */,
+				D1D2B77527F0AB8A005E7C8D /* NotionSecureRequest.swift */,
+				D1D2B77627F0AB8A005E7C8D /* NotionService.swift */,
+				D1D2B77727F0AB8A005E7C8D /* FirebaseService.swift */,
+				D1D2B77827F0AB8A005E7C8D /* Preference.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D1D2B77927F0AB8A005E7C8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2B77A27F0AB8A005E7C8D /* ReceiptRecord.swift */,
+				D1D2B77B27F0AB8A005E7C8D /* Database.swift */,
+				D1D2B77C27F0AB8A005E7C8D /* Filter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1D2B78A27F0ABD5005E7C8D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2B78B27F0ABD5005E7C8D /* String.swift */,
+				D1D2B78C27F0ABD5005E7C8D /* UIImage.swift */,
+				D1DBE19127F3176D00A1BEAA /* UIView.swift */,
+				D1DBE19327F48DB300A1BEAA /* UIColor.swift */,
+				D1DBE19D27F86F2000A1BEAA /* UILabel.swift */,
+			);
+			name = Extension;
+			path = ../../ReceiptRecordV3/ReceiptRecordV3/Extension;
+			sourceTree = "<group>";
+		};
+		D1D2B79327F19F11005E7C8D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D1D2B79427F19F3A005E7C8D /* DatabaseVM.swift */,
+				D1D2B79627F1B2D6005E7C8D /* ReceiptRecordVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D1DBE19F27F8783B00A1BEAA /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				D1DBE1A027F8784700A1BEAA /* ColorCode.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		D1F85F8727F0A6A4004A1B0C = {
 			isa = PBXGroup;
 			children = (
@@ -128,14 +277,22 @@
 		D1F85F9227F0A6A4004A1B0C /* ReceiptRecordV4 */ = {
 			isa = PBXGroup;
 			children = (
+				D1DBE19F27F8783B00A1BEAA /* Color */,
+				D1AFD3E127F3004B00045AAB /* View */,
+				D1BF75A727F2C96E002E200E /* Fonts */,
+				D1BF75A627F1FCF1002E200E /* Controller */,
+				D1D2B79327F19F11005E7C8D /* ViewModel */,
+				D1D2B78A27F0ABD5005E7C8D /* Extension */,
+				D1D2B77927F0AB8A005E7C8D /* Model */,
+				D1D2B77327F0AB8A005E7C8D /* Service */,
+				D1D2B76E27F0AB66005E7C8D /* Manager */,
 				D1F85F9327F0A6A4004A1B0C /* AppDelegate.swift */,
 				D1F85F9527F0A6A4004A1B0C /* SceneDelegate.swift */,
-				D1F85F9727F0A6A4004A1B0C /* ViewController.swift */,
-				D1F85F9927F0A6A4004A1B0C /* Main.storyboard */,
+				D1AFD3DC27F2D4F000045AAB /* LaunchScreen.storyboard */,
+				D1AFD3DB27F2D4F000045AAB /* Main.storyboard */,
+				D1D2B79127F19CA8005E7C8D /* GoogleService-Info.plist */,
 				D1F85F9F27F0A6A7004A1B0C /* Assets.xcassets */,
-				D1F85FA127F0A6A7004A1B0C /* LaunchScreen.storyboard */,
 				D1F85FA427F0A6A7004A1B0C /* Info.plist */,
-				D1F85F9C27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodeld */,
 			);
 			path = ReceiptRecordV4;
 			sourceTree = "<group>";
@@ -167,7 +324,6 @@
 				88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */,
 				E6D1FA3E7C47D450EC998BE0 /* Pods-ReceiptRecordV4Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -261,7 +417,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = D1F85F8727F0A6A4004A1B0C;
 			productRefGroup = D1F85F9127F0A6A4004A1B0C /* Products */;
@@ -280,9 +435,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F85FA327F0A6A7004A1B0C /* LaunchScreen.storyboard in Resources */,
+				D1AFD3E527F3017900045AAB /* TableReceiptViewCell.xib in Resources */,
 				D1F85FA027F0A6A7004A1B0C /* Assets.xcassets in Resources */,
-				D1F85F9B27F0A6A4004A1B0C /* Main.storyboard in Resources */,
+				D1AFD3DA27F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf in Resources */,
+				D1D2B79227F19CA8005E7C8D /* GoogleService-Info.plist in Resources */,
+				D1AFD3DE27F2D4F000045AAB /* LaunchScreen.storyboard in Resources */,
+				D1AFD3DD27F2D4F000045AAB /* Main.storyboard in Resources */,
+				D1DBE19C27F4A91900A1BEAA /* HeaderViewCell.xib in Resources */,
+				D1986E192803DABC003298FD /* TableReceiptUnDoneViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,9 +570,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F85F9827F0A6A4004A1B0C /* ViewController.swift in Sources */,
-				D1F85F9E27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodeld in Sources */,
+				D1DBE19827F49C5400A1BEAA /* AddSubController.swift in Sources */,
+				D1DBE19227F3176D00A1BEAA /* UIView.swift in Sources */,
+				D1DBE19427F48DB300A1BEAA /* UIColor.swift in Sources */,
+				D1DBE19B27F4A91900A1BEAA /* HeaderViewCell.swift in Sources */,
+				D1DBE19627F4975B00A1BEAA /* AddMainController.swift in Sources */,
+				D1DBE19E27F86F2000A1BEAA /* UILabel.swift in Sources */,
+				D1D2B77227F0AB66005E7C8D /* FirebaseManager.swift in Sources */,
+				D1D2B79727F1B2D6005E7C8D /* ReceiptRecordVM.swift in Sources */,
+				D1D2B77F27F0AB8A005E7C8D /* NotionService.swift in Sources */,
+				D1AFD3E427F3017900045AAB /* TableReceiptViewCell.swift in Sources */,
+				D1D2B77127F0AB66005E7C8D /* ReceiptRecordManager.swift in Sources */,
+				D1D2B79527F19F3A005E7C8D /* DatabaseVM.swift in Sources */,
+				D1D2B77E27F0AB8A005E7C8D /* NotionSecureRequest.swift in Sources */,
+				D1D2B78227F0AB8A005E7C8D /* ReceiptRecord.swift in Sources */,
+				D1AFD3E027F2EF1F00045AAB /* RoundedTabBarController.swift in Sources */,
+				D1D2B78127F0AB8A005E7C8D /* Preference.swift in Sources */,
+				D1986E1A2803DABC003298FD /* TableReceiptUnDoneViewCell.swift in Sources */,
+				D1D2B78427F0AB8A005E7C8D /* Filter.swift in Sources */,
+				D1D2B77D27F0AB8A005E7C8D /* Logging.swift in Sources */,
+				D1DBE1A127F8784700A1BEAA /* ColorCode.swift in Sources */,
+				D1D2B78E27F0ABD5005E7C8D /* UIImage.swift in Sources */,
+				D1D2B78027F0AB8A005E7C8D /* FirebaseService.swift in Sources */,
 				D1F85F9427F0A6A4004A1B0C /* AppDelegate.swift in Sources */,
+				D1D2B76927F0AAC4005E7C8D /* MenuController.swift in Sources */,
+				D1D2B78D27F0ABD5005E7C8D /* String.swift in Sources */,
+				D1D2B78327F0AB8A005E7C8D /* Database.swift in Sources */,
 				D1F85F9627F0A6A4004A1B0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,25 +631,6 @@
 			targetProxy = D1F85FB427F0A6A7004A1B0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D1F85F9927F0A6A4004A1B0C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1F85F9A27F0A6A4004A1B0C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D1F85FA127F0A6A7004A1B0C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1F85FA227F0A6A7004A1B0C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D1F85FBB27F0A6A7004A1B0C /* Debug */ = {
@@ -589,11 +753,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 53943NA4G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReceiptRecordV4/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Request for scanning receipts";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -606,6 +772,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flyingpigs.ReceiptRecordV4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -618,11 +785,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 53943NA4G8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ReceiptRecordV4/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Request for scanning receipts";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -635,6 +804,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = flyingpigs.ReceiptRecordV4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -761,19 +931,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D1F85F9C27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D1F85F9D27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodel */,
-			);
-			currentVersion = D1F85F9D27F0A6A4004A1B0C /* ReceiptRecordV4.xcdatamodel */;
-			path = ReceiptRecordV4.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D1F85F8827F0A6A4004A1B0C /* Project object */;
 }

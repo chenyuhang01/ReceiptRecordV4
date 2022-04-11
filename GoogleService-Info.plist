@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>523556973432-3cqt1gc7ec6ddu4472cs07krvjf2rmc9.apps.googleusercontent.com</string>
+	<string>523556973432-dmgogoi211qretms8rkj2lf6p1orqhun.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.523556973432-3cqt1gc7ec6ddu4472cs07krvjf2rmc9</string>
+	<string>com.googleusercontent.apps.523556973432-dmgogoi211qretms8rkj2lf6p1orqhun</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDJ0Vewcppw05PLcrAjGpBbrLWj6gIbXgk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>flyingpigs.ReceiptRecordV3</string>
+	<string>flyingpigs.ReceiptRecordV4</string>
 	<key>PROJECT_ID</key>
 	<string>receipttrackerv3</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:523556973432:ios:f85335ab4d00b1e368f68d</string>
+	<string>1:523556973432:ios:55faea98c2837a1f68f68d</string>
 </dict>
 </plist>
