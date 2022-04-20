@@ -27,6 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     guard let menuVC = subVC as? MenuVC else { continue }
                     menuVC.receiptManager = ReceiptRecordManager.shared
                     menuVC.documentCameraViewController = VNDocumentCameraViewController()
+                    menuVC.detailVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC)
+                    menuVC.detailVC.receiptManager = ReceiptRecordManager.shared
                     menuVC.addMainVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddMainVC") as! AddMainVC)
                     menuVC.addMainVC.addSubVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddSubVC") as! AddSubVC)
                     break

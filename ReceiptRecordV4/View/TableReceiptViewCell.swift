@@ -19,6 +19,8 @@ class TableReceiptViewCell: UITableViewCell {
     private var imageUrl: String?
     private var uIImage: UIImage?
     
+    private var recordVM: ReceiptRecordVM?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,56 +38,31 @@ class TableReceiptViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setInformation(title: String, price: Double) {
-        titleTextView.text = title
-        priceTextView.text = "$\(price)"
-        
-        titleValue = title
-        priceValue = price
+    func setRecordVM(recordVM: ReceiptRecordVM?) {
+        self.recordVM = recordVM
     }
     
-    func setUIImage(uIImage: UIImage?) {
-        if let theUIImage = uIImage {
-            self.uIImage = uIImage
-            self.uiImageView.image = self.uIImage
+    func setInformation( ) {
+        guard let recordVM = recordVM else {
+            return
         }
-    }
-    
-    // Calling this will trigger image download background process
-    func setImage(imageUrl: String) {
-        self.imageUrl = imageUrl
         
-        if let imageUrl = self.imageUrl {
-            DispatchQueue(label: "Download Image").async {
-                let task = URLSession.shared.dataTask(with: URL(string:imageUrl)!) { data, response, error in
-                    
-                    guard let response = response as? HTTPURLResponse else {
-                        // self.setDefaultImage()
-                        return
-                    }
-                    
-                    if response.statusCode == 200 {
-                        guard let data = data, error == nil else {
-                            // self.setDefaultImage()
-                            return
-                        }
-                        self.uIImage = UIImage(data: data)
-                        
-                        DispatchQueue.main.async {
-                            self.uiImageView.image = self.uIImage
-                        }
-                    } else {
-//                        self.setDefaultImage()
-                        return
-                    }
-                }
-                task.resume()
-            }
-        }
+        titleTextView.text = recordVM.getPropertiesValue(type: .Title)
+        priceTextView.text = "$\(recordVM.getPropertiesNumericValue(type: .Price))"
+        
+        // Calling this will trigger image download background process
+//        self.uiImageView.loadImage(imageFromUrl: recordVM.getPropertiesValue(type: .ImageUrl)) { loadedUIImage in
+//            recordVM.setUIImage(Image: loadedUIImage)
+//        }
     }
     
     func postProcess() {
-        if priceValue == -1 {
+        guard let recordVM = recordVM else {
+            priceTextView.isHidden = true
+            uiImageView.makeRounded(radius: 15)
+            return
+        }
+        if recordVM.getPropertiesNumericValue(type: .Price) == -1 {
             priceTextView.isHidden = true
             uiImageView.makeRounded(radius: 15)
         }

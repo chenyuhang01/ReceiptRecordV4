@@ -13,11 +13,18 @@ let HEADER_HEIGHT: CGFloat = 70
 let NO_HEADER: CGFloat = 0
 let CELL_HEIGHT: CGFloat = 140
 
+
+let SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW: CGFloat = 5
+let SPACE_BETWEEN_CELL_TOP_DOWN: CGFloat = 10
+let SPACE_BETWEEN_CELL_LEFT_RIGHT: CGFloat = 0
+let NUM_OF_COLLECTION_CELL_PER_ROW: CGFloat = 2
+
 class MenuVC: UIViewController {
     // DI
     var receiptManager: ReceiptRecordManager!
     var documentCameraViewController: VNDocumentCameraViewController!
     var addMainVC: AddMainVC!
+    var detailVC: DetailVC!
     
     // ViewModels
     var databaseVM: DatabaseVM?
@@ -29,6 +36,7 @@ class MenuVC: UIViewController {
     @IBOutlet weak var dateIndicateLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyStackView: UIStackView!
     @IBOutlet weak var horizontalNavStackView: UIStackView!
     @IBOutlet weak var segmentTableControl: UISegmentedControl!
@@ -52,6 +60,8 @@ extension MenuVC {
         self.tabBarController?.viewControllers?.insert(documentCameraViewController, at: 1)
         documentCameraViewController.tabBarItem.title = "Scan"
         documentCameraViewController.tabBarItem.image = UIImage(named: "scan.png")
+        // Setup Scan VC delegate
+        documentCameraViewController.delegate = self
     }
     
     private func configureTableViewCell() {
@@ -59,6 +69,11 @@ extension MenuVC {
         self.tableView.register(nib, forCellReuseIdentifier: "TableReceiptViewCell")
         let nibForSectionCell = UINib(nibName: "HeaderViewCell", bundle: nil)
         self.tableView.register(nibForSectionCell, forCellReuseIdentifier: "HeaderViewCell")
+    }
+    
+    private func configureCollectionViewCell() {
+        let nib = UINib(nibName: "TableReceiptCollectionViewCell", bundle: nil)
+        self.collectionView.register(nib, forCellWithReuseIdentifier: "TableReceiptCollectionViewCell")
     }
     
     private func revealEmptyIndicator() {
@@ -76,21 +91,60 @@ extension MenuVC {
         self.tableView.delegate = self
     }
     
+    private func configureCollectionViewDelegate() {
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+    
+    private func configureSegmentControll() {
+        segmentTableControl.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 28), .foregroundColor: UIColor.tertiaryColor], for: .selected)
+        segmentTableControl.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 20), .foregroundColor: UIColor.tertiaryColor], for: .normal)
+    }
+    
+    private func setupLongGestureRecognizerOnCollection() {
+        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+        longPressedGesture.minimumPressDuration = 0.5
+        longPressedGesture.delegate = self
+        longPressedGesture.delaysTouchesBegan = true
+        self.collectionView.addGestureRecognizer(longPressedGesture)
+    }
+    
     private func configureUI() {
         
         self.configureTabVC()
         self.configureTableViewCell()
         self.revealEmptyIndicator()
+        self.configureSegmentControll()
         self.configureTableViewDelegate()
+        self.configureCollectionViewCell()
+        self.configureCollectionViewDelegate()
+        self.setupLongGestureRecognizerOnCollection()
+        
         let screenSize: CGRect = UIScreen.main.bounds
-        NSLayoutConstraint(item: self.horizontalNavStackView!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: screenSize.width).isActive = true
+        NSLayoutConstraint(item: self.horizontalNavStackView!, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: screenSize.width - 50).isActive = true
         
         self.dateIndicateLabel.textColor = UIColor.tertiaryColor
         self.dateLabel.textColor = UIColor.tertiaryColor
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        self.dateLabel.text = dateFormatter.string(from: Date())
+        
+        // self.collectionView.isHidden = true
     }
-    @IBAction func segmentValueOnChanged(_ sender: Any) {
+    @IBAction func segmentControlValueOnChanged(_ sender: Any) {
         cellIdentifier = (self.segmentTableControl.selectedSegmentIndex == 0) ? CellType.NotDone : CellType.Done
-        self.tableView.reloadData()
+        if cellIdentifier == .NotDone {
+            self.collectionView.isHidden = false
+        }
+        else {
+            self.tableView.isHidden = false
+            self.collectionView.isHidden = true
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -103,9 +157,6 @@ extension MenuVC {
         // Suscribe to the data update msg
         NotificationCenter.default.addObserver(self, selector: #selector(databaseUpdateMsg), name: .databaseUpdatesPostMessage, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(receiptRecordUpdateMsg), name: .receiptRecordUpdatesPostMessage, object: nil)
-        
-        // Setup Scan VC delegate
-        documentCameraViewController.delegate = self
     }
     
     func forceInit() {
@@ -122,7 +173,11 @@ extension MenuVC {
         guard let receiptRecordArrayVM = notification.object as? ReceiptRecordArrayVM else { return }
         self.receiptRecordArrayVM = receiptRecordArrayVM
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            if self.cellIdentifier == .NotDone {
+                self.collectionView.reloadData()
+            } else {
+                self.tableView.reloadData()
+            }
             self.unrevealEmptyIndicator()
         }
     }
@@ -158,7 +213,6 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var textToDisplay: String?
         guard let receiptArrVM = self.receiptRecordArrayVM else { return UITableViewCell() }
         // Get the number of not done cell
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableReceiptViewCell", for: indexPath) as! TableReceiptViewCell
@@ -167,17 +221,13 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
             receiptArrVM.switchMode(mode: .Done)
             guard let vmList = self.getParticularDateSectionList(theSectionBelongsTo: indexPath.section) else { return UITableViewCell() }
             recordVM = vmList[indexPath.row]
-            cell.setUIImage(uIImage: UIImage(named: "cloth.jpg")!)
-            textToDisplay = recordVM.getPropertiesValue(type: .Title)
         } else {
             receiptArrVM.switchMode(mode: .NotDone)
             recordVM = receiptArrVM[indexPath.row]
-            cell.setImage(imageUrl: recordVM.getPropertiesValue(type: .ImageUrl))
-            textToDisplay = recordVM.getPropertiesValue(type: .PurchasedDate)
         }
         
-        cell.setInformation(title: textToDisplay!,
-                            price: recordVM.getPropertiesNumericValue(type: .Price))
+        cell.setRecordVM(recordVM: recordVM)
+        cell.setInformation( )
         cell.postProcess()
         
         return cell
@@ -215,13 +265,129 @@ extension MenuVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        guard let vmList = self.getParticularDateSectionList(theSectionBelongsTo: indexPath.section) else { return }
+        let recordVM = vmList[indexPath.row]
+        self.detailVC.recordVM = recordVM
+        self.navigationController?.pushViewController(self.detailVC, animated: true)
     }
     
     func getParticularDateSectionList(theSectionBelongsTo section: Int) -> [ReceiptRecordVM]? {
         guard let receiptArrVM = self.receiptRecordArrayVM else { return nil }
         let selectedDate: String = receiptArrVM.getOrderedDateList()[section]
         return receiptArrVM.receiptRecordDoneDateDict[selectedDate]
+    }
+    
+    
+    // Swipe left action
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return nil
+    }
+}
+
+extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let receiptArrVM = self.receiptRecordArrayVM else { return 0 }
+        if cellIdentifier == .NotDone {
+            return receiptArrVM.getNotDoneCount()
+        } else {
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let receiptArrVM = self.receiptRecordArrayVM else { return UICollectionViewCell( ) }
+        receiptArrVM.switchMode(mode: .NotDone)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "TableReceiptCollectionViewCell", for: indexPath) as! TableReceiptCollectionViewCell
+        cell.setRecordVM(recordVM: receiptArrVM[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let receiptVM = self.getUnDoneRecordVM(idx: indexPath.row) else { return }
+        self.navigationController?.pushViewController(addMainVC, animated: true)
+        addMainVC.setRecordVM(recordVM: receiptVM)
+        addMainVC.receiptRecordManager = receiptManager
+    }
+    
+    func getUnDoneRecordVM(idx: Int) -> ReceiptRecordVM? {
+        guard let receiptArrVM = self.receiptRecordArrayVM else { return nil }
+        var returnVM: ReceiptRecordVM?
+        let originalMode = receiptArrVM.mode
+        receiptArrVM.switchMode(mode: .NotDone)
+        returnVM = receiptArrVM[idx]
+        receiptArrVM.switchMode(mode: originalMode)
+        return returnVM
+    }
+    
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != .began) {
+            return
+        }
+
+        let p = gestureRecognizer.location(in: collectionView)
+
+        if let indexPath = collectionView?.indexPathForItem(at: p) {
+            print("Long press at item: \(indexPath.row)")
+            
+            self.promptUserAction { IsConfirm in
+                if IsConfirm {
+                    guard let receiptArrVM = self.receiptRecordArrayVM else { return }
+                    receiptArrVM.switchMode(mode: .NotDone)
+                    
+                    let recordVM = receiptArrVM[indexPath.row]
+                    recordVM.markAsArchived()
+                    
+                    self.receiptManager.updateNewReceiptRecord(receiptRecord: recordVM.receiptRecord) { IsSuccess in
+                        if ( IsSuccess )
+                        {
+                            print(IsSuccess)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func promptUserAction(completion: @escaping (Bool)->Void) {
+        let ConfirmAlert = UIAlertController(title: "Confirm to delete", message: "The image will be deleted", preferredStyle: .alert)
+
+        ConfirmAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action: UIAlertAction!) in
+            completion(true)
+        }))
+        
+        ConfirmAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            completion(false)
+        }))
+        
+        present(ConfirmAlert, animated: true, completion: nil)
+    }
+}
+
+extension MenuVC: UICollectionViewDelegateFlowLayout {
+    
+    /// 設定 Collection View 距離 Super View上、下、左、下間的距離
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW, left: SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW, bottom: SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW, right: SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW)
+    }
+    
+    ///  設定 CollectionViewCell 的寬、高
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameWidth = ( self.collectionView.frame.width ) / NUM_OF_COLLECTION_CELL_PER_ROW - ( SPACE_BETWEEN_SUPERVIEW_AND_COLLECTION_VIEW * 2 )
+        return CGSize(width: frameWidth , height: frameWidth)
+    }
+    
+    /// 滑動方向為「垂直」的話即「上下」的間距(預設為重直)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return SPACE_BETWEEN_CELL_TOP_DOWN
+    }
+    
+    /// 滑動方向為「垂直」的話即「左右」的間距(預設為重直)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return SPACE_BETWEEN_CELL_LEFT_RIGHT
     }
 }
 
@@ -235,8 +401,6 @@ extension MenuVC: VNDocumentCameraViewControllerDelegate {
             dismiss(animated: true, completion: nil)
             return
         }
-        
-        print("AA")
         
         for index in 0...(scan.pageCount - 1) {
             let uiImage = scan.imageOfPage(at: index)
@@ -258,14 +422,35 @@ extension MenuVC: VNDocumentCameraViewControllerDelegate {
                         self.receiptManager.insertNewReceiptRecord(receiptRecord: newRecordVM.receiptRecord, completion: { isSuccess in
                             if isSuccess {
                                 print("Success")
+                                DispatchQueue.main.async {
+                                    self.forceInit()
+                                }
                             }
                         })
                     }
                 }
             }
         }
-        dismiss(animated: true, completion: nil)
-        self.tabBarController?.selectedIndex = 0
+        
+        
+        dismiss(animated: true) {
+            self.tabBarController?.selectedIndex = 0
+            self.refresh()
+        }
+    }
+    
+    func refresh() {
+        if let tabBarController = self.tabBarController {
+            let indexToRemove = 1
+            if indexToRemove < tabBarController.viewControllers!.count {
+                var viewControllers = tabBarController.viewControllers
+                viewControllers?.remove(at: indexToRemove)
+                tabBarController.viewControllers = viewControllers
+                documentCameraViewController = VNDocumentCameraViewController()
+                self.configureTabVC()
+                print("renew")
+            }
+        }
     }
     
     func randomFileName(length: Int) -> String {

@@ -178,7 +178,7 @@ extension ReceiptRecordManager {
                 self.refreshDatabase()
                 // Posting of updating of receipt records
                 // so that main vc will update the table
-                self.postMessage(msg: .receiptRecordUpdatesPostMessage)
+                self.refreshReceiptRecord()
                 completion(true)
                 return
             } else {
@@ -225,7 +225,6 @@ extension ReceiptRecordManager {
                 if let jsonData = object as? Data {
                     do {
                         self.receiptRecords = try JSONDecoder().decode(ReceiptRecords.self, from: jsonData)
-                        let str = String(decoding: jsonData, as: UTF8.self)
                         completion(true)
                         return
                     } catch {

@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */; };
 		D172F4672800645B002A72BE /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
-		D1986E192803DABC003298FD /* TableReceiptUnDoneViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */; };
-		D1986E1A2803DABC003298FD /* TableReceiptUnDoneViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */; };
+		D1986E1D2803DE76003298FD /* TableReceiptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */; };
+		D1986E1E2803DE76003298FD /* TableReceiptCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */; };
+		D1986E20280471BF003298FD /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E1F280471BF003298FD /* DetailVC.swift */; };
+		D1986E22280476DD003298FD /* ImageFullScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E21280476DD003298FD /* ImageFullScreenVC.swift */; };
 		D1AFD3DA27F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3D927F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf */; };
 		D1AFD3DD27F2D4F000045AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3DB27F2D4F000045AAB /* Main.storyboard */; };
 		D1AFD3DE27F2D4F000045AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1AFD3DC27F2D4F000045AAB /* LaunchScreen.storyboard */; };
@@ -76,8 +78,10 @@
 		87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.release.xcconfig"; sourceTree = "<group>"; };
 		88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReceiptUnDoneViewCell.xib; sourceTree = "<group>"; };
-		D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableReceiptUnDoneViewCell.swift; sourceTree = "<group>"; };
+		D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReceiptCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableReceiptCollectionViewCell.xib; sourceTree = "<group>"; };
+		D1986E1F280471BF003298FD /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		D1986E21280476DD003298FD /* ImageFullScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFullScreenVC.swift; sourceTree = "<group>"; };
 		D1AFD3D927F2CFFC00045AAB /* Oswald-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		D1AFD3DB27F2D4F000045AAB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D1AFD3DC27F2D4F000045AAB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,12 +166,12 @@
 		D1AFD3E127F3004B00045AAB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D1986E182803DABC003298FD /* TableReceiptUnDoneViewCell.swift */,
-				D1986E172803DABC003298FD /* TableReceiptUnDoneViewCell.xib */,
 				D1AFD3E227F3017900045AAB /* TableReceiptViewCell.swift */,
 				D1AFD3E327F3017900045AAB /* TableReceiptViewCell.xib */,
 				D1DBE19927F4A91900A1BEAA /* HeaderViewCell.swift */,
 				D1DBE19A27F4A91900A1BEAA /* HeaderViewCell.xib */,
+				D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */,
+				D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +183,8 @@
 				D1AFD3DF27F2EF1F00045AAB /* RoundedTabBarController.swift */,
 				D1DBE19527F4975B00A1BEAA /* AddMainController.swift */,
 				D1DBE19727F49C5400A1BEAA /* AddSubController.swift */,
+				D1986E1F280471BF003298FD /* DetailVC.swift */,
+				D1986E21280476DD003298FD /* ImageFullScreenVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,8 +447,8 @@
 				D1D2B79227F19CA8005E7C8D /* GoogleService-Info.plist in Resources */,
 				D1AFD3DE27F2D4F000045AAB /* LaunchScreen.storyboard in Resources */,
 				D1AFD3DD27F2D4F000045AAB /* Main.storyboard in Resources */,
+				D1986E1E2803DE76003298FD /* TableReceiptCollectionViewCell.xib in Resources */,
 				D1DBE19C27F4A91900A1BEAA /* HeaderViewCell.xib in Resources */,
-				D1986E192803DABC003298FD /* TableReceiptUnDoneViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,12 +587,13 @@
 				D1D2B77F27F0AB8A005E7C8D /* NotionService.swift in Sources */,
 				D1AFD3E427F3017900045AAB /* TableReceiptViewCell.swift in Sources */,
 				D1D2B77127F0AB66005E7C8D /* ReceiptRecordManager.swift in Sources */,
+				D1986E22280476DD003298FD /* ImageFullScreenVC.swift in Sources */,
 				D1D2B79527F19F3A005E7C8D /* DatabaseVM.swift in Sources */,
 				D1D2B77E27F0AB8A005E7C8D /* NotionSecureRequest.swift in Sources */,
+				D1986E1D2803DE76003298FD /* TableReceiptCollectionViewCell.swift in Sources */,
 				D1D2B78227F0AB8A005E7C8D /* ReceiptRecord.swift in Sources */,
 				D1AFD3E027F2EF1F00045AAB /* RoundedTabBarController.swift in Sources */,
 				D1D2B78127F0AB8A005E7C8D /* Preference.swift in Sources */,
-				D1986E1A2803DABC003298FD /* TableReceiptUnDoneViewCell.swift in Sources */,
 				D1D2B78427F0AB8A005E7C8D /* Filter.swift in Sources */,
 				D1D2B77D27F0AB8A005E7C8D /* Logging.swift in Sources */,
 				D1DBE1A127F8784700A1BEAA /* ColorCode.swift in Sources */,
@@ -597,6 +604,7 @@
 				D1D2B78D27F0ABD5005E7C8D /* String.swift in Sources */,
 				D1D2B78327F0AB8A005E7C8D /* Database.swift in Sources */,
 				D1F85F9627F0A6A4004A1B0C /* SceneDelegate.swift in Sources */,
+				D1986E20280471BF003298FD /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

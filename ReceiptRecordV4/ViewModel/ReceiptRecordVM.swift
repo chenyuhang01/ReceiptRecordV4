@@ -138,6 +138,18 @@ class ReceiptRecordVM {
         dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
+    func markAsArchived() {
+        self.receiptRecord.archived = true
+    }
+    
+    func unMarkAsArchived() {
+        self.receiptRecord.archived = false
+    }
+    
+    func isMarkAsArchived() -> Bool {
+        return self.receiptRecord.archived
+    }
+    
     func getCreatedTime() -> String {
         return dateFormatter.string(from: self.receiptRecord.createdTime)
     }
@@ -150,8 +162,9 @@ class ReceiptRecordVM {
         return self.receiptRecord.properties.reporter.plainText
     }
 
-    func setUIImage(Image: UIImage) {
-        self.receiptRecord.uiImage = Image
+    func setUIImage(Image: UIImage?) {
+        guard let uIImage = Image else { return }
+        self.receiptRecord.uiImage = uIImage
     }
     
     func clearUIImage() {
@@ -184,6 +197,16 @@ class ReceiptRecordVM {
                 break
             case .PurchasedDate:
                 self.receiptRecord.properties.purchasedDate.dateInfo.startDate = dateFormatter.date(from: value)!
+                break
+            default:
+                return
+        }
+    }
+    
+    func setPropertiesDateValue(type: PropertiesType, value: Date) {
+        switch(type) {
+            case .PurchasedDate:
+                self.receiptRecord.properties.purchasedDate.dateInfo.startDate = value
                 break
             default:
                 return
