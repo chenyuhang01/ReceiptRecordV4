@@ -11,11 +11,13 @@ class TableReceiptCollectionViewCell: UICollectionViewCell {
 
     private var recordVM: ReceiptRecordVM?
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var loadingView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.imageView.makeRounded(radius: 15)
+        self.loadingView.makeRounded(radius: 15)
     }
     
     
@@ -29,8 +31,15 @@ class TableReceiptCollectionViewCell: UICollectionViewCell {
         guard let recordVM = recordVM else {
             return
         }
+        if let _ = recordVM.getUIImage() {
+            
+        } else {
+            self.loadingView.isHidden = false
+        }
+        
         self.imageView.loadImage(imageFromUrl: recordVM.getPropertiesValue(type: .ImageUrl)) { loadedImage in
             self.recordVM?.setUIImage(Image: loadedImage)
+            self.loadingView.isHidden = true
         }
     }
 }

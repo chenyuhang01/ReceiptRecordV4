@@ -19,18 +19,36 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpM-ou-rNj">
                         <rect key="frame" x="0.0" y="0.0" width="134" height="124"/>
                     </imageView>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBJ-ij-eSr">
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="124"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ket-jg-ak5">
+                                <rect key="frame" x="48.5" y="43.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9529411793" green="0.69411766529999996" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ket-jg-ak5" firstAttribute="centerX" secondItem="xBJ-ij-eSr" secondAttribute="centerX" id="n2R-w9-k0i"/>
+                            <constraint firstItem="ket-jg-ak5" firstAttribute="centerY" secondItem="xBJ-ij-eSr" secondAttribute="centerY" id="ywp-zB-Taa"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="hpM-ou-rNj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8wl-Xg-mOb"/>
+                <constraint firstAttribute="trailing" secondItem="xBJ-ij-eSr" secondAttribute="trailing" id="AbX-wi-XBA"/>
+                <constraint firstItem="xBJ-ij-eSr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EnP-QE-JYs"/>
                 <constraint firstAttribute="trailing" secondItem="hpM-ou-rNj" secondAttribute="trailing" id="HjG-Ph-xF9"/>
                 <constraint firstItem="hpM-ou-rNj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KT7-9K-jod"/>
                 <constraint firstAttribute="bottom" secondItem="hpM-ou-rNj" secondAttribute="bottom" id="kek-Me-tph"/>
+                <constraint firstItem="xBJ-ij-eSr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oYj-Xb-T0c"/>
+                <constraint firstAttribute="bottom" secondItem="xBJ-ij-eSr" secondAttribute="bottom" id="zXZ-aq-y3d"/>
             </constraints>
             <size key="customSize" width="134" height="124"/>
             <connections>
                 <outlet property="imageView" destination="hpM-ou-rNj" id="4hv-Fv-qRH"/>
+                <outlet property="loadingView" destination="xBJ-ij-eSr" id="sOG-BE-FYN"/>
             </connections>
             <point key="canvasLocation" x="244.92753623188409" y="157.36607142857142"/>
         </collectionViewCell>

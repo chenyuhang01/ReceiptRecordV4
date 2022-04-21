@@ -25,6 +25,7 @@ class MenuVC: UIViewController {
     var documentCameraViewController: VNDocumentCameraViewController!
     var addMainVC: AddMainVC!
     var detailVC: DetailVC!
+    var overlayManager: OverlayManager!
     
     // ViewModels
     var databaseVM: DatabaseVM?
@@ -43,6 +44,9 @@ class MenuVC: UIViewController {
     
     // Segment control value
     var cellIdentifier: CellType = .NotDone
+    
+    // Number of images to be uploaded
+    var uploadedNum: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +143,7 @@ extension MenuVC {
         cellIdentifier = (self.segmentTableControl.selectedSegmentIndex == 0) ? CellType.NotDone : CellType.Done
         if cellIdentifier == .NotDone {
             self.collectionView.isHidden = false
+            self.collectionView.reloadData()
         }
         else {
             self.tableView.isHidden = false
@@ -160,6 +165,7 @@ extension MenuVC {
     }
     
     func forceInit() {
+        self.overlayManager.showLoadingView()
         self.receiptManager.refreshDatabase()
         self.receiptManager.refreshReceiptRecord()
     }
@@ -178,6 +184,7 @@ extension MenuVC {
             } else {
                 self.tableView.reloadData()
             }
+            self.overlayManager.hideOverlayView()
             self.unrevealEmptyIndicator()
         }
     }
@@ -331,8 +338,6 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UIGestur
         let p = gestureRecognizer.location(in: collectionView)
 
         if let indexPath = collectionView?.indexPathForItem(at: p) {
-            print("Long press at item: \(indexPath.row)")
-            
             self.promptUserAction { IsConfirm in
                 if IsConfirm {
                     guard let receiptArrVM = self.receiptRecordArrayVM else { return }
@@ -340,12 +345,9 @@ extension MenuVC: UICollectionViewDelegate, UICollectionViewDataSource, UIGestur
                     
                     let recordVM = receiptArrVM[indexPath.row]
                     recordVM.markAsArchived()
-                    
+                    self.overlayManager.showLoadingView()
                     self.receiptManager.updateNewReceiptRecord(receiptRecord: recordVM.receiptRecord) { IsSuccess in
-                        if ( IsSuccess )
-                        {
-                            print(IsSuccess)
-                        }
+
                     }
                 }
             }
@@ -396,12 +398,14 @@ extension MenuVC: UICollectionViewDelegateFlowLayout {
 */
 extension MenuVC: VNDocumentCameraViewControllerDelegate {
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
-
+        
+        let serialQueue = DispatchQueue(label: "queuename")
         if scan.pageCount == 0 {
             dismiss(animated: true, completion: nil)
             return
         }
-        
+        self.uploadedNum = scan.pageCount
+        self.overlayManager.showLoadingView()
         for index in 0...(scan.pageCount - 1) {
             let uiImage = scan.imageOfPage(at: index)
             let imageName = self.randomFileName(length: 10)
@@ -421,9 +425,14 @@ extension MenuVC: VNDocumentCameraViewControllerDelegate {
                         newRecordVM.setUIImage(Image: uiImage)
                         self.receiptManager.insertNewReceiptRecord(receiptRecord: newRecordVM.receiptRecord, completion: { isSuccess in
                             if isSuccess {
-                                print("Success")
-                                DispatchQueue.main.async {
-                                    self.forceInit()
+                                serialQueue.sync {
+                                    self.uploadedNum = self.uploadedNum - 1
+                                    if self.uploadedNum == 0 {
+                                        DispatchQueue.main.async {
+                                            self.overlayManager.hideOverlayView()
+                                            self.forceInit()
+                                        }
+                                    }
                                 }
                             }
                         })

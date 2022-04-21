@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */; };
+		D16F7CEE28105D0E005B8FDC /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F7CED28105D0E005B8FDC /* OverlayManager.swift */; };
 		D172F4672800645B002A72BE /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
 		D1986E1D2803DE76003298FD /* TableReceiptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */; };
 		D1986E1E2803DE76003298FD /* TableReceiptCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */; };
@@ -78,6 +79,7 @@
 		87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.release.xcconfig"; sourceTree = "<group>"; };
 		88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16F7CED28105D0E005B8FDC /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReceiptCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableReceiptCollectionViewCell.xib; sourceTree = "<group>"; };
 		D1986E1F280471BF003298FD /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 				AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D16F7CEC28105CFF005B8FDC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D16F7CED28105D0E005B8FDC /* OverlayManager.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		D1AFD3E127F3004B00045AAB /* View */ = {
@@ -283,6 +293,7 @@
 		D1F85F9227F0A6A4004A1B0C /* ReceiptRecordV4 */ = {
 			isa = PBXGroup;
 			children = (
+				D16F7CEC28105CFF005B8FDC /* Helper */,
 				D1DBE19F27F8783B00A1BEAA /* Color */,
 				D1AFD3E127F3004B00045AAB /* View */,
 				D1BF75A727F2C96E002E200E /* Fonts */,
@@ -578,6 +589,7 @@
 			files = (
 				D1DBE19827F49C5400A1BEAA /* AddSubController.swift in Sources */,
 				D1DBE19227F3176D00A1BEAA /* UIView.swift in Sources */,
+				D16F7CEE28105D0E005B8FDC /* OverlayManager.swift in Sources */,
 				D1DBE19427F48DB300A1BEAA /* UIColor.swift in Sources */,
 				D1DBE19B27F4A91900A1BEAA /* HeaderViewCell.swift in Sources */,
 				D1DBE19627F4975B00A1BEAA /* AddMainController.swift in Sources */,

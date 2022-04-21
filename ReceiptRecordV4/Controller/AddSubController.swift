@@ -23,7 +23,7 @@ class AddSubVC: UIViewController {
     private var category: String = ""
     private var chosenDate: Date = Date()
     var receiptRecordManager: ReceiptRecordManager!
-    
+    var overlayManager: OverlayManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class AddSubVC: UIViewController {
         recordVM?.setPropertiesNumericValue(type: .Price, value: price)
         recordVM?.setPropertiesArrayStringValue(type: .Category, valueList: [self.category])
         recordVM?.setPropertiesArrayStringValue(type: .Store, valueList: [self.store])
-        
+        self.overlayManager.showLoadingView()
         self.receiptRecordManager.updateNewReceiptRecord(receiptRecord: recordVM?.receiptRecord) { isSuccess in
             if isSuccess {
                 

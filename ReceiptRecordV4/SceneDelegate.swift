@@ -29,8 +29,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     menuVC.documentCameraViewController = VNDocumentCameraViewController()
                     menuVC.detailVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as! DetailVC)
                     menuVC.detailVC.receiptManager = ReceiptRecordManager.shared
+                    menuVC.detailVC.overlayManaeger = OverlayManager.shared
                     menuVC.addMainVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddMainVC") as! AddMainVC)
                     menuVC.addMainVC.addSubVC = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddSubVC") as! AddSubVC)
+                    menuVC.addMainVC.overlayManager = OverlayManager.shared
+                    menuVC.overlayManager = OverlayManager.shared
                     break
                 }
             }

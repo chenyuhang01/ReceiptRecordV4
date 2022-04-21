@@ -22,6 +22,7 @@ class AddMainVC: UIViewController {
     private var viewRetrived = false
     var addSubVC: AddSubVC!
     var receiptRecordManager: ReceiptRecordManager!
+    var overlayManager: OverlayManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class AddMainVC: UIViewController {
         let destination = segue.destination as! AddSubVC
         destination.setRecordVM(recordVM: self.recordVM)
         destination.setInfo(title: titleTextField.text!, price: Double(priceTextField.text!)!, store: storeTextField.text!, cat: categoryTextField.text!)
+        destination.overlayManager = self.overlayManager
         destination.receiptRecordManager = receiptRecordManager
     }
     
