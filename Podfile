@@ -17,5 +17,9 @@ target 'ReceiptRecordV4' do
   end
 pod 'Firebase/Core'
 pod 'Firebase/Storage'
+pod 'MaterialComponents/TextControls+FilledTextAreas'
+pod 'MaterialComponents/TextControls+FilledTextFields'
+pod 'MaterialComponents/TextControls+OutlinedTextAreas'
+pod 'MaterialComponents/TextControls+OutlinedTextFields'
 
 end

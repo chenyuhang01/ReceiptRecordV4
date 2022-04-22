@@ -147,6 +147,9 @@ extension ReceiptRecordManager {
                         self.lock.lock()
                         self.receiptRecords?.insertNewReceiptRecord(receiptRecord: insertedNewRecord)
                         self.lock.unlock()
+                        // Updating new record must get the options of the store or cartegory of the database obj
+                        self.refreshDatabase()
+                        
                         Logging.shared.logMsgEvent(loggingType: .INFO, message: "Success", funcName: #function, moduleName: #file)
                         completion(true)
                         return

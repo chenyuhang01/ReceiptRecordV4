@@ -20,10 +20,11 @@ class DetailVC: UIViewController {
     
     var recordVM: ReceiptRecordVM!
     var receiptManager: ReceiptRecordManager!
+    var overlayManaeger: OverlayManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.makeRounded(radius: 15)
+        self.imageView.makeRounded(radius: 15, masksToBounds: true)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(ImageOnClick))
         self.imageView.addGestureRecognizer(gesture)
@@ -80,10 +81,9 @@ class DetailVC: UIViewController {
     }
     @IBAction func deleteButtonOnClicked(_ sender: Any) {
         self.recordVM.markAsArchived()
-        
+        self.overlayManaeger.showLoadingView()
         self.receiptManager.updateNewReceiptRecord(receiptRecord: self.recordVM.receiptRecord) { isSuccess in
             if isSuccess {
-                print("Success")
                 DispatchQueue.main.async {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
