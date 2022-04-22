@@ -16,8 +16,8 @@ class TableReceiptCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.imageView.makeRounded(radius: 15)
-        self.loadingView.makeRounded(radius: 15)
+        self.imageView.makeRounded(radius: 15, masksToBounds: true)
+        self.loadingView.makeRounded(radius: 15, masksToBounds: true)
     }
     
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8BDAB554992A8AB212999322 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C61D90214FF76A2C33B4A3 /* Pods_ReceiptRecordV4_ReceiptRecordV4UITests.framework */; };
+		D12D19982812ABCC00CD06DA /* MultiSelectInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12D19972812ABCC00CD06DA /* MultiSelectInputField.swift */; };
 		D16F7CEE28105D0E005B8FDC /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F7CED28105D0E005B8FDC /* OverlayManager.swift */; };
 		D172F4672800645B002A72BE /* Pods_ReceiptRecordV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB197AB2D60CA4F926A45EA /* Pods_ReceiptRecordV4.framework */; };
 		D1986E1D2803DE76003298FD /* TableReceiptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */; };
@@ -79,6 +80,7 @@
 		87A76A7B694A3F6CB00757B8 /* Pods-ReceiptRecordV4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4.release.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4/Pods-ReceiptRecordV4.release.xcconfig"; sourceTree = "<group>"; };
 		88FF4C983FAE00A9A79619ED /* Pods-ReceiptRecordV4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceiptRecordV4Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReceiptRecordV4Tests/Pods-ReceiptRecordV4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB7A82B8EB14581B158179A5 /* Pods_ReceiptRecordV4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceiptRecordV4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D12D19972812ABCC00CD06DA /* MultiSelectInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectInputField.swift; sourceTree = "<group>"; };
 		D16F7CED28105D0E005B8FDC /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
 		D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReceiptCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableReceiptCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				D1DBE19A27F4A91900A1BEAA /* HeaderViewCell.xib */,
 				D1986E1B2803DE76003298FD /* TableReceiptCollectionViewCell.swift */,
 				D1986E1C2803DE76003298FD /* TableReceiptCollectionViewCell.xib */,
+				D12D19972812ABCC00CD06DA /* MultiSelectInputField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				D1D2B77127F0AB66005E7C8D /* ReceiptRecordManager.swift in Sources */,
 				D1986E22280476DD003298FD /* ImageFullScreenVC.swift in Sources */,
 				D1D2B79527F19F3A005E7C8D /* DatabaseVM.swift in Sources */,
+				D12D19982812ABCC00CD06DA /* MultiSelectInputField.swift in Sources */,
 				D1D2B77E27F0AB8A005E7C8D /* NotionSecureRequest.swift in Sources */,
 				D1986E1D2803DE76003298FD /* TableReceiptCollectionViewCell.swift in Sources */,
 				D1D2B78227F0AB8A005E7C8D /* ReceiptRecord.swift in Sources */,

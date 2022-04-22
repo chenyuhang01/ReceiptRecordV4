@@ -24,7 +24,7 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.makeRounded(radius: 15)
+        self.imageView.makeRounded(radius: 15, masksToBounds: true)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(ImageOnClick))
         self.imageView.addGestureRecognizer(gesture)

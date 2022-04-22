@@ -59,17 +59,17 @@ class TableReceiptViewCell: UITableViewCell {
     func postProcess() {
         guard let recordVM = recordVM else {
             priceTextView.isHidden = true
-            uiImageView.makeRounded(radius: 15)
+            uiImageView.makeRounded(radius: 15, masksToBounds: true)
             return
         }
         if recordVM.getPropertiesNumericValue(type: .Price) == -1 {
             priceTextView.isHidden = true
-            uiImageView.makeRounded(radius: 15)
+            uiImageView.makeRounded(radius: 15, masksToBounds: true)
         }
         else
         {
             priceTextView.isHidden = false
-            uiImageView.makeRounded(radius: 45)
+            uiImageView.makeRounded(radius: 45, masksToBounds: true)
         }
     }
     
@@ -77,7 +77,7 @@ class TableReceiptViewCell: UITableViewCell {
         // Image View Rounded wirh border
         self.setAllFontAdjustable(isAdjustable: true)
         self.makeRoundedCorner(cornerRadius: 15)
-        self.dropShadowOnCell()
+        self.dropShadowOnCell(width: 10, height: self.frame.height - 20)
         self.setAllFontColor(fontColor: UIColor.secondaryColor)
     }
     
@@ -88,14 +88,6 @@ class TableReceiptViewCell: UITableViewCell {
 
         self.contentView.layer.cornerRadius = cornerRadius
         self.contentView.clipsToBounds = true
-    }
-    
-    private func dropShadowOnCell() {
-        self.layer.shadowOpacity = 0.5
-        self.clipsToBounds = true
-        self.backgroundColor = UIColor.clear
-        self.layer.cornerRadius = 15
-        self.layer.shadowOffset = CGSize(width: 10, height: self.frame.height - 20)
     }
     
     private func setAllFontAdjustable(isAdjustable: Bool) {
